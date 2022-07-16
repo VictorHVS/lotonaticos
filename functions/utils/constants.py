@@ -1,0 +1,2 @@
+COLLECTION_LOTTERIES = "lotteries"
+COLLECTION_USERS = "users"
