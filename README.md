@@ -1,3 +1,3 @@
-# loterica-facil
+# Lotonáticos
 Resultados da Loteria
 
