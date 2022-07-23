@@ -97,6 +97,7 @@ dependencies {
     implementation(Dependencies.Firebase.auth)
     implementation(Dependencies.Firebase.firestore)
     implementation(Dependencies.Firebase.crashlytics)
+    implementation(Dependencies.Firebase.appCheck)
 
     testImplementation(Dependencies.Test.junit)
 

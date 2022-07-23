@@ -85,5 +85,6 @@ object Dependencies {
         const val auth = "com.google.firebase:firebase-auth-ktx"
         const val firestore = "com.google.firebase:firebase-firestore-ktx"
         const val crashlytics = "com.google.firebase:firebase-crashlytics-ktx"
+        const val appCheck = "com.google.firebase:firebase-appcheck-playintegrity"
     }
 }
