@@ -49,6 +49,8 @@ object Dependencies {
             "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Kotlinx.core}"
         const val coroutineAndroid =
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Kotlinx.core}"
+        const val coroutinePlayService =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${Versions.Kotlinx.core}"
         const val serialization =
             "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.Kotlinx.serialization}"
     }
@@ -86,5 +88,6 @@ object Dependencies {
         const val firestore = "com.google.firebase:firebase-firestore-ktx"
         const val crashlytics = "com.google.firebase:firebase-crashlytics-ktx"
         const val appCheck = "com.google.firebase:firebase-appcheck-playintegrity"
+        const val appCheckDebug = "com.google.firebase:firebase-appcheck-debug:${Versions.Firebase.appCheckDebug}"
     }
 }

@@ -91,6 +91,7 @@ dependencies {
     implementation(Dependencies.Kotlinx.serialization)
     implementation(Dependencies.Kotlinx.coroutinesCore)
     implementation(Dependencies.Kotlinx.coroutineAndroid)
+    implementation(Dependencies.Kotlinx.coroutinePlayService)
 
     implementation(platform(Dependencies.Firebase.bom))
     implementation(Dependencies.Firebase.analytics)
@@ -98,6 +99,7 @@ dependencies {
     implementation(Dependencies.Firebase.firestore)
     implementation(Dependencies.Firebase.crashlytics)
     implementation(Dependencies.Firebase.appCheck)
+    implementation(Dependencies.Firebase.appCheckDebug)
 
     testImplementation(Dependencies.Test.junit)
 

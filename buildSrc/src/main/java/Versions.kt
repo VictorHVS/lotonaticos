@@ -54,6 +54,7 @@ object Versions {
     }
 
     object Firebase {
+        const val appCheckDebug = "16.0.0"
         const val bom = "30.2.0"
     }
 }

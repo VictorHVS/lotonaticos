@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.victorhvs.lotonaticos.presentation.navigation.Screen.Companion.DRAW_ARGUMENT_KEY
+import com.victorhvs.lotonaticos.presentation.screens.browse.BrowseScreen
 import com.victorhvs.lotonaticos.presentation.screens.splash_screen.AnimatedSplashScreen
 
 @ExperimentalComposeUiApi
@@ -21,7 +22,7 @@ fun SetupNavGraph(navController: NavHostController) {
             AnimatedSplashScreen(navController = navController)
         }
         composable(route = Screen.Browse.route) {
-
+            BrowseScreen(navController = navController)
         }
         composable(
             route = Screen.ResultList.route,

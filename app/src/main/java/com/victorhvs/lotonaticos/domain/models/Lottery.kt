@@ -6,4 +6,6 @@ data class Lottery(
     val description: String,
     val color: String,
     val enabled: Boolean
-)
+) {
+    constructor() : this(uuid = "", title = "", description = "", color = "", enabled = false)
+}
