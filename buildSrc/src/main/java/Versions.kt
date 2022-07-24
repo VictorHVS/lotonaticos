@@ -16,7 +16,7 @@ object Versions {
     object Plugin {
         const val crashlytics = "2.9.1"
         const val kotlin = "1.6.10"
-        const val androidGradle = "7.2.0"
+        const val androidGradle = "7.2.1"
         const val googleServices = "4.3.13"
     }
 
