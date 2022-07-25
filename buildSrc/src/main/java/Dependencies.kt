@@ -90,4 +90,9 @@ object Dependencies {
         const val appCheck = "com.google.firebase:firebase-appcheck-playintegrity"
         const val appCheckDebug = "com.google.firebase:firebase-appcheck-debug:${Versions.Firebase.appCheckDebug}"
     }
+
+    object Coil {
+        const val coil = "io.coil-kt:coil:${Versions.Coil.coil}"
+        const val coilSvg = "io.coil-kt:coil-svg:${Versions.Coil.coil}"
+    }
 }

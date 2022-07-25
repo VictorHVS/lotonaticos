@@ -57,4 +57,8 @@ object Versions {
         const val appCheckDebug = "16.0.0"
         const val bom = "30.2.0"
     }
+
+    object Coil {
+        const val coil = "2.1.0"
+    }
 }

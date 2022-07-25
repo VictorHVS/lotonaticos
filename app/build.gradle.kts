@@ -49,7 +49,17 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        freeCompilerArgs = freeCompilerArgs + listOf(
+            "-opt-in=kotlin.RequiresOptIn",
+            // Enable experimental coroutines APIs, including Flow
+            "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+            "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi",
+            "-opt-in=kotlinx.coroutines.FlowPreview",
+            "-opt-in=kotlin.Experimental",
+            // Enable experimental kotlinx serialization APIs
+            "-opt-in=kotlinx.serialization.ExperimentalSerializationApi"
+        )
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
     buildFeatures {
@@ -100,6 +110,9 @@ dependencies {
     implementation(Dependencies.Firebase.crashlytics)
     implementation(Dependencies.Firebase.appCheck)
     implementation(Dependencies.Firebase.appCheckDebug)
+
+    implementation(Dependencies.Coil.coil)
+    implementation(Dependencies.Coil.coilSvg)
 
     testImplementation(Dependencies.Test.junit)
 

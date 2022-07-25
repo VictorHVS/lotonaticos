@@ -1,5 +1,7 @@
 package com.victorhvs.lotonaticos.presentation.navigation
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.NavHostController
@@ -22,6 +24,12 @@ fun SetupNavGraph(navController: NavHostController) {
             AnimatedSplashScreen(navController = navController)
         }
         composable(route = Screen.Browse.route) {
+            BrowseScreen(navController = navController)
+        }
+        composable(route = Screen.Setting.route) {
+            BrowseScreen(navController = navController)
+        }
+        composable(route = Screen.Statistic.route) {
             BrowseScreen(navController = navController)
         }
         composable(
