@@ -2,14 +2,12 @@ package com.victorhvs.lotonaticos.presentation.screens.browse
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.victorhvs.lotonaticos.domain.LotteryRepository
+import com.victorhvs.lotonaticos.data.LotteryRepository
 import com.victorhvs.lotonaticos.domain.State
 import com.victorhvs.lotonaticos.domain.models.Lottery
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

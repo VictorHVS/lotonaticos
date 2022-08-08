@@ -3,4 +3,6 @@
     <string name="home_results">Resultados</string>
     <string name="home_analytics">Análise</string>
     <string name="home_settings">Sobre</string>
+    <string name="result_description">%s • R$%s</string>
+    <string name="result_title">%s n°%s</string>
 </resources>

@@ -1,7 +1,8 @@
-package com.victorhvs.lotonaticos.domain
+package com.victorhvs.lotonaticos.data
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.victorhvs.lotonaticos.domain.Constants.FIRESTORE_COLLECTION_LOTTERY
+import com.victorhvs.lotonaticos.domain.State
 import com.victorhvs.lotonaticos.domain.models.Lottery
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
