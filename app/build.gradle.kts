@@ -95,6 +95,8 @@ dependencies {
     implementation(Dependencies.JetpackCompose.hiltNavigation)
     debugImplementation(Dependencies.JetpackCompose.tooling)
 
+    implementation("androidx.compose.material3:material3-window-size-class:1.0.0-alpha15")
+
     implementation(Dependencies.Hilt.android)
     kapt(Dependencies.Hilt.compiler)
 

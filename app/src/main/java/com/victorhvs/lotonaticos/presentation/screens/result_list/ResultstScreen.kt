@@ -15,9 +15,11 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -30,6 +32,7 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -38,6 +41,7 @@ import androidx.compose.ui.unit.times
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.victorhvs.lotonaticos.R
+import com.victorhvs.lotonaticos.data.fake.Mocks.contestResultMock
 import com.victorhvs.lotonaticos.data.fake.Mocks.lotteryMock
 import com.victorhvs.lotonaticos.domain.State
 import com.victorhvs.lotonaticos.domain.models.ContestResult
@@ -65,6 +69,13 @@ fun BrowseContainer(
     navController: NavController
 ) {
     Scaffold(
+        topBar = {
+            SmallTopAppBar(
+                title = {
+                    Toolbar()
+                }
+            )
+        },
         content = {
             when (state) {
                 is State.Failed -> {
@@ -80,7 +91,7 @@ fun BrowseContainer(
                     )
                 }
                 is State.Success -> {
-                    ContestResultList(state.data)
+                    ContestResultList(modifier = Modifier.padding(it), results = state.data)
                 }
             }
         }
@@ -93,7 +104,7 @@ fun ContestResultList(
     modifier: Modifier = Modifier
 ) {
     LazyColumn(
-        modifier.padding(8.dp),
+        modifier = modifier.padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
         items(items = results, key = { it.hashCode() }) { result ->
@@ -127,7 +138,7 @@ fun ContestResultItem(
 
         Row(
             modifier = modifier
-                .padding(4.dp)
+                .padding(horizontal = 4.dp)
                 .fillMaxWidth()
         ) {
             Image(
@@ -206,21 +217,50 @@ fun ContestResultListPreview() {
     }
 }
 
-//@Preview(showBackground = true, showSystemUi = true)
-//@Composable
-//fun ResultsScreenPreview() {
-//    val results = listOf(
-//        contestResultMock.copy(id = "1"),
-//        contestResultMock.copy(id = "2", amountRaised = 12345.0),
-//        contestResultMock.copy(id = "3"),
-//        contestResultMock.copy(id = "4"),
-//        contestResultMock.copy(id = "5"),
-//        contestResultMock.copy(id = "6"),
-//        contestResultMock.copy(id = "7"),
-//    )
-//    val state = State.Success(results)
-//
-//    LotonaticosTheme {
-//        BrowseContainer(state = state, navController = NavController(LocalContext.current))
-//    }
-//}
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun ResultsScreenPreview() {
+    val results = listOf(
+        contestResultMock.copy(id = "1"),
+        contestResultMock.copy(id = "2", amountRaised = 12345.0),
+        contestResultMock.copy(id = "3"),
+        contestResultMock.copy(id = "4"),
+        contestResultMock.copy(id = "5"),
+        contestResultMock.copy(id = "6"),
+        contestResultMock.copy(id = "7"),
+    )
+    val state = State.Success(results)
+
+    LotonaticosTheme {
+        BrowseContainer(state = state, navController = NavController(LocalContext.current))
+    }
+}
+
+@Composable
+fun Toolbar() {
+    Row(
+        horizontalArrangement = Arrangement.spacedBy(4.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.clover),
+            contentDescription = stringResource(id = R.string.app_name),
+            modifier = Modifier
+                .size(24.dp),
+            alignment = Alignment.Center,
+            colorFilter = ColorFilter.tint(Color(0xFF8fcbb3), BlendMode.Modulate),
+        )
+        Text(
+            text = stringResource(id = R.string.app_name),
+            style = MaterialTheme.typography.titleLarge
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ToolbarPreview() {
+    LotonaticosTheme {
+        Toolbar()
+    }
+}

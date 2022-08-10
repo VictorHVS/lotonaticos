@@ -15,7 +15,7 @@ object Versions {
 
     object Plugin {
         const val crashlytics = "2.9.1"
-        const val kotlin = "1.6.10"
+        const val kotlin = "1.6.20"
         const val androidGradle = "7.2.1"
         const val googleServices = "4.3.13"
     }
@@ -42,7 +42,7 @@ object Versions {
     }
 
     object JetpackCompose {
-        const val jetpackCompose = "1.1.0"
+        const val jetpackCompose = "1.2.0-alpha08"
         const val activity = "1.3.1"
         const val appCompatTheme = "0.16.0"
         const val compiler = "1.0.5"
@@ -50,7 +50,7 @@ object Versions {
         const val swipeRefresh = "0.24.0-alpha"
         const val navigation = "2.4.1"
         const val hiltNavigation = "1.0.0"
-        const val material3 = "1.0.0-alpha14"
+        const val material3 = "1.0.0-alpha15"
     }
 
     object Firebase {
