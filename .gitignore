@@ -383,3 +383,5 @@ fabric.properties
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/androidstudio,python,windows,linux,macos
+/.idea/codeStyles/
+/private_key.pepk
