@@ -1,12 +1,19 @@
 plugins {
-    id("com.android.application")
-    id("com.google.gms.google-services")
-    id("kotlin-android")
-    kotlin("kapt")
+//    id("com.android.application")
+//    id("com.google.gms.google-services")
+//    id("kotlin-android")
+//    kotlin("kapt")
     id("dagger.hilt.android.plugin")
-    id("kotlinx-serialization")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.firebase.crashlytics")
+//    id("kotlinx-serialization")
+//    id("org.jetbrains.kotlin.android")
+//    id("com.google.firebase.crashlytics")
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.detekt)
+//    alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin)
+    alias(libs.plugins.kotlinKapt)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.ktLint)
 }
 
 kapt {
@@ -15,14 +22,15 @@ kapt {
 }
 
 android {
-    compileSdk = Versions.Android.compileSdk
+    compileSdk = 32
 
     defaultConfig {
-        applicationId = Versions.App.id
-        minSdk = Versions.Android.minSdk
-        targetSdk = Versions.Android.targetSdk
-        versionCode = Versions.App.versionCode
-        versionName = Versions.App.versionName
+        applicationId = "com.victorhvs.lotonaticos"
+        minSdk = 24
+        targetSdk = 32
+        versionCode = 1
+        versionName = "1.0.0"
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -67,7 +75,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.JetpackCompose.jetpackCompose
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
 
     packagingOptions {
@@ -78,50 +86,48 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.AndroidX.coreKtx)
-    implementation(Dependencies.AndroidX.appCompat)
-    implementation(Dependencies.AndroidX.lifecycleRuntime)
+//    implementation(libs.AndroidX.coreKtx)
+//    implementation(libs.AndroidX.appCompat)
+//    implementation(libs.AndroidX.lifecycleRuntime)
 
-    implementation(Dependencies.JetpackCompose.ui)
-    implementation(Dependencies.JetpackCompose.toolingPreview)
-    implementation(Dependencies.JetpackCompose.foundation)
-    implementation(Dependencies.JetpackCompose.material3)
-    implementation(Dependencies.JetpackCompose.activity)
-    implementation(Dependencies.JetpackCompose.appCompatTheme)
-    implementation(Dependencies.JetpackCompose.paging)
-    implementation(Dependencies.JetpackCompose.swipeRefresh)
-    implementation(Dependencies.JetpackCompose.icons)
-    implementation(Dependencies.JetpackCompose.navigation)
-    implementation(Dependencies.JetpackCompose.hiltNavigation)
-    debugImplementation(Dependencies.JetpackCompose.tooling)
+    implementation(libs.compose.ui)
+    implementation(libs.compose.tooling.preview)
+    implementation(libs.compose.foundation)
+    implementation(libs.compose.material3)
+    implementation(libs.compose.activity)
+    implementation(libs.compose.appCompatTheme)
+    implementation(libs.compose.paging)
+    implementation(libs.compose.icons)
+    implementation(libs.compose.navigation)
+    implementation(libs.compose.navigationHilt)
+    implementation(libs.compose.accompanist.swipeRefresh)
+    debugImplementation(libs.compose.tooling)
 
-    implementation("androidx.compose.material3:material3-window-size-class:1.0.0-alpha15")
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
 
-    implementation(Dependencies.Hilt.android)
-    kapt(Dependencies.Hilt.compiler)
+    implementation(libs.kotlin.serialization)
+    implementation(libs.kotlin.coroutines.core)
+    implementation(libs.kotlin.coroutines)
+    implementation(libs.kotlin.coroutine.playservice)
 
-    implementation(Dependencies.Kotlinx.serialization)
-    implementation(Dependencies.Kotlinx.coroutinesCore)
-    implementation(Dependencies.Kotlinx.coroutineAndroid)
-    implementation(Dependencies.Kotlinx.coroutinePlayService)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.appCheck)
+    implementation(libs.firebase.appCheckDebug)
 
-    implementation(platform(Dependencies.Firebase.bom))
-    implementation(Dependencies.Firebase.analytics)
-    implementation(Dependencies.Firebase.auth)
-    implementation(Dependencies.Firebase.firestore)
-    implementation(Dependencies.Firebase.crashlytics)
-    implementation(Dependencies.Firebase.appCheck)
-    implementation(Dependencies.Firebase.appCheckDebug)
+    implementation(libs.coil)
+    implementation(libs.coil.svg)
 
-    implementation(Dependencies.Coil.coil)
-    implementation(Dependencies.Coil.coilSvg)
+//    testImplementation(libs.Test.junit)
 
-    testImplementation(Dependencies.Test.junit)
-
-    androidTestImplementation(Dependencies.Test.runner)
-    androidTestImplementation(Dependencies.Test.rules)
-    androidTestImplementation(Dependencies.Test.testExt)
-    androidTestImplementation(Dependencies.Test.composeJunit)
-    androidTestImplementation(Dependencies.Test.espresso)
-    debugImplementation(Dependencies.Test.composeUiTestManifest)
+//    androidTestImplementation(libs.Test.runner)
+//    androidTestImplementation(libs.Test.rules)
+//    androidTestImplementation(libs.Test.testExt)
+//    androidTestImplementation(libs.Test.composeJunit)
+//    androidTestImplementation(libs.Test.espresso)
+//    debugImplementation(libs.Test.composeUiTestManifest)
 }
