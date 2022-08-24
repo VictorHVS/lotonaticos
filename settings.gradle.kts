@@ -1,4 +1,5 @@
 include(":app")
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -13,4 +14,3 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "lotonaticos"
