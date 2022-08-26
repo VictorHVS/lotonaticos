@@ -7,6 +7,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.victorhvs.lotonaticos.BuildConfig
 import com.victorhvs.lotonaticos.data.datasource.FirebaseDataSource
 import com.victorhvs.lotonaticos.data.datasource.FirebaseDataSourceImp
+import com.victorhvs.lotonaticos.test.DispatcherProvider
+import com.victorhvs.lotonaticos.test.DispatcherProviderImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,12 +31,20 @@ object DI {
 
     @Provides
     @Singleton
-    fun provideFirestoreClient() = FirebaseFirestore.getInstance()
+    fun provideFirestoreClient(): FirebaseFirestore = FirebaseFirestore.getInstance()
 
     @Provides
     @Singleton
-    fun provideFirestoreDataSource(client: FirebaseFirestore): FirebaseDataSource =
+    fun provideDisparcherProvider(): DispatcherProvider = DispatcherProviderImpl()
+
+    @Provides
+    @Singleton
+    fun provideFirestoreDataSource(
+        client: FirebaseFirestore,
+        dispacher: DispatcherProvider
+    ): FirebaseDataSource =
         FirebaseDataSourceImp(
-            client = client
+            client = client,
+            dispatcher = dispacher
         )
 }
