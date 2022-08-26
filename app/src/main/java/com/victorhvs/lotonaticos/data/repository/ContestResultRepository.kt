@@ -2,19 +2,18 @@ package com.victorhvs.lotonaticos.data.repository
 
 import com.victorhvs.lotonaticos.data.datasource.FirebaseDataSource
 import com.victorhvs.lotonaticos.domain.State
-import com.victorhvs.lotonaticos.domain.models.ContestResult
-import kotlinx.coroutines.Dispatchers
+import com.victorhvs.lotonaticos.commons.DispatcherProvider
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 class ContestResultRepository @Inject constructor(
-    private val firebaseDataSource: FirebaseDataSource
+    private val firebaseDataSource: FirebaseDataSource,
+    private val dispatcher: DispatcherProvider
 ) {
 
-    fun getMegaResults() = flow<State<List<ContestResult>>> {
-
+    fun getMegaResults() = flow {
         emit(State.loading())
 
         val lotteries = firebaseDataSource.getMegaResults()
@@ -22,6 +21,6 @@ class ContestResultRepository @Inject constructor(
 
     }.catch {
         emit(State.failed(it.message.toString()))
-    }.flowOn(Dispatchers.IO)
+    }.flowOn(dispatcher.io())
 
 }

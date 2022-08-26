@@ -1,4 +1,4 @@
-package com.victorhvs.lotonaticos.test
+package com.victorhvs.lotonaticos.commons
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -10,3 +10,4 @@ interface DispatcherProvider {
     fun unconfined(): CoroutineDispatcher = Dispatchers.Unconfined
 }
 
+class DispatcherProviderImpl : DispatcherProvider

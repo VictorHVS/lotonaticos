@@ -4,7 +4,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.victorhvs.lotonaticos.domain.Constants
 import com.victorhvs.lotonaticos.domain.models.ContestResult
-import com.victorhvs.lotonaticos.test.DispatcherProvider
+import com.victorhvs.lotonaticos.commons.DispatcherProvider
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
