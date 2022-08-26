@@ -1,4 +1,4 @@
-package com.victorhvs.lotonaticos.data
+package com.victorhvs.lotonaticos.data.repository
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.victorhvs.lotonaticos.domain.Constants.FIRESTORE_COLLECTION_LOTTERY
