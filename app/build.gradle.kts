@@ -96,12 +96,13 @@ dependencies {
 
     coreLibraryDesugaring(libs.desugar)
 
-//    testImplementation(Dependencies.Test.junit)
-//
-//    androidTestImplementation(Dependencies.Test.runner)
-//    androidTestImplementation(Dependencies.Test.rules)
-//    androidTestImplementation(Dependencies.Test.testExt)
-//    androidTestImplementation(Dependencies.Test.composeJunit)
-//    androidTestImplementation(Dependencies.Test.espresso)
-//    debugImplementation(Dependencies.Test.composeUiTestManifest)
+    androidTestImplementation(libs.test.androidJunitExt)
+    androidTestImplementation(libs.test.androidCompose)
+    testImplementation(libs.test.mockk)
+    testImplementation(libs.test.kotlin)
+    testImplementation(libs.test.kotlinCoroutines)
+    testImplementation(libs.test.kotest)
+    testImplementation(libs.test.junit)
+
+    debugImplementation(libs.test.composeUiTestManifest)
 }
