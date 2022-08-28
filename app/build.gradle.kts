@@ -7,6 +7,7 @@ plugins {
     id("kotlinx-serialization")
     id("org.jetbrains.kotlin.android")
     id("com.google.firebase.crashlytics")
+    id("org.sonarqube") version "3.4.0.2513"
 }
 
 android {
