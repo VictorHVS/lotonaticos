@@ -27,9 +27,6 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
 
-      - name: Build with Gradle
-        run: ./gradlew clean build test --no-daemon --parallel build
-
       - name: Cache SonarCloud packages
         uses: actions/cache@v1
         with:
@@ -43,6 +40,18 @@ jobs:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
+
+      - name: Run Lint
+        run: ./gradlew lint
+
+      - name: Run Detekt
+        run: ./gradlew detekt
+
+      - name: Run Jacoco Report
+        run: ./gradlew jacocoTestReport --stacktrace
+
+      - name: Build with Gradle
+        run: ./gradlew clean build test --no-daemon --parallel build
 
       - name: Build and analyze
         env:

@@ -8,6 +8,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.firebase.crashlytics")
     id("org.sonarqube") version "3.4.0.2513"
+    id("com.victorhvs.kotlin-quality")
 }
 
 android {
@@ -36,6 +37,16 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+
+    lint {
+        warningsAsErrors = true
+        abortOnError = true
+        htmlReport = true
+        checkDependencies = true
+
+        lintConfig = file("${rootDir}/config/filters/lint.xml")
+        htmlOutput = file("${buildDir}/reports/lint.html")
     }
 
     compileOptions {

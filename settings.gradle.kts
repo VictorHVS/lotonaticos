@@ -2,6 +2,7 @@ include(":app")
 
 pluginManagement {
     repositories {
+        includeBuild("plugins")
         gradlePluginPortal()
         google()
         mavenCentral()
@@ -14,3 +15,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
