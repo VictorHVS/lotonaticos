@@ -41,16 +41,22 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
 
+      - name: Create and populate .Renviron file
+        env:
+          GOOGLE_SERVICE: ${{ secrets.GOOGLE_SERVICE }}
+        run: |
+            touch app/google-services.json
+            echo $GOOGLE_SERVICE >> app/google-services.json
 #      - name: Run Lint
 #        run: ./gradlew lint
-#
+
 #      - name: Run Detekt
 #        run: ./gradlew detekt
 
       - name: Run Jacoco Report
         run: ./gradlew jacocoTestReport --stacktrace
 
-      - name: Run Jacoco Report
+      - name: Run Jacoco coverageVerification
         run: ./gradlew jacocoCoverageVerification --stacktrace
 
       - name: Build with Gradle

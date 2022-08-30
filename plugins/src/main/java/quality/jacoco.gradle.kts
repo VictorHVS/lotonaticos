@@ -1,52 +1,9 @@
 package quality
 
+import org.gradle.testing.jacoco.plugins.JacocoPlugin
+import org.gradle.testing.jacoco.plugins.JacocoTaskExtension
+
 apply<JacocoPlugin>()
-apply(plugin = "jacoco")
-//
-//val jacocoTask = tasks.register<JacocoReport>("jacocoTestReport") {
-//    dependsOn(tasks.named("testDebugUnitTest"))
-//
-//    reports {
-//        html.apply {
-//            isEnabled = true
-//            destination = file("$buildDir/reports/code-coverage/html")
-//        }
-//        xml.isEnabled = true
-//        csv.isEnabled = false
-//    }
-//
-//    val fileFilter = listOf(
-//        "**/R.class",
-//        "**/R\$*.class",
-//        "**/BuildConfig.*",
-//        "**/Manifest*.*",
-//        "**/*Test*.*",
-//        "android/**/*.*"
-//    )
-//    val debugTree = fileTree("${project.buildDir}/intermediates/javac/debug") {
-//        exclude(fileFilter)
-//    }
-//
-//    val mainSrc = "${project.projectDir}/src/main/java"
-//
-//    sourceDirectories.setFrom(files(listOf(mainSrc)))
-//    classDirectories.setFrom(files(listOf(debugTree)))
-//    executionData.setFrom(
-//        fileTree(project.buildDir) {
-//            include(listOf("jacoco/testDebugUnitTest.exec"))
-//        }
-//    )
-//}
-//
-//tasks.getByName("check").finalizedBy("jacocoTestReport")
-//
-//tasks.withType(Test::class) {
-//    configure<JacocoTaskExtension> {
-//        isIncludeNoLocationClasses = true
-//        excludes = listOf("jdk.internal.*")
-//    }
-//}
-//
 
 tasks.withType(Test::class) {
     configure<JacocoTaskExtension> {
