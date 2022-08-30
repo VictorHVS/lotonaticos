@@ -29,9 +29,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            isTestCoverageEnabled = true
+        }
         release {
             isMinifyEnabled = true
             isShrinkResources = true
+            isTestCoverageEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android.txt"),
                 "proguard-rules.pro"
@@ -66,6 +70,13 @@ android {
 
     packagingOptions {
         resources.excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+    }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+            unitTests.isReturnDefaultValues = true
+        }
     }
 }
 
