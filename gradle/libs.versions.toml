@@ -2,7 +2,7 @@
 # plugins
 androidGradle                       = "7.2.2"
 detekt                              = "1.21.0"
-ktlinte                              = "0.46.1"
+ktlint                              = "0.46.1"
 junit                               = "4.12"
 ksp                                 = "1.7.10-1.0.6"
 firebaseCrashlyticsPlugin           = "2.8.1"
@@ -117,5 +117,5 @@ test-androidRunner                   = { module = "androidx.test:runner", versio
 # debug libraries
 test-composeUiTestManifest           = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
 
-ktlint = { module = "com.pinterest:ktlint", version.ref = "ktlinte" }
+ktlint = { module = "com.pinterest:ktlint", version.ref = "ktlint" }
 detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }

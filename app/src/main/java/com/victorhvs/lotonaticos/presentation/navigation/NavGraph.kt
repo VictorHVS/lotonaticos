@@ -8,8 +8,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.victorhvs.lotonaticos.presentation.navigation.Screen.Companion.DRAW_ARGUMENT_KEY
-import com.victorhvs.lotonaticos.presentation.screens.result_list.ContestResultListScreen
-import com.victorhvs.lotonaticos.presentation.screens.splash_screen.AnimatedSplashScreen
+import com.victorhvs.lotonaticos.presentation.screens.resultList.ContestResultListScreen
+import com.victorhvs.lotonaticos.presentation.screens.splashScreen.AnimatedSplashScreen
 
 @ExperimentalComposeUiApi
 @Composable
@@ -23,7 +23,7 @@ fun SetupNavGraph(navController: NavHostController) {
         }
         composable(route = Screen.Browse.route) {
 //            BrowseScreen(navController = navController)
-            ContestResultListScreen(navController = navController)
+            ContestResultListScreen()
         }
         composable(route = Screen.Setting.route) {
 //            BrowseScreen(navController = navController)
@@ -33,9 +33,11 @@ fun SetupNavGraph(navController: NavHostController) {
         }
         composable(
             route = Screen.ResultList.route,
-            arguments = listOf(navArgument(DRAW_ARGUMENT_KEY) {
-                type = NavType.StringType
-            })
+            arguments = listOf(
+                navArgument(DRAW_ARGUMENT_KEY) {
+                    type = NavType.StringType
+                }
+            )
         ) {
         }
     }

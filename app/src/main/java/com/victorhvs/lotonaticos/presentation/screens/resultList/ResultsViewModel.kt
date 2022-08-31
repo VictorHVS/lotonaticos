@@ -1,4 +1,4 @@
-package com.victorhvs.lotonaticos.presentation.screens.result_list
+package com.victorhvs.lotonaticos.presentation.screens.resultList
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -31,5 +31,4 @@ class ResultsViewModel @Inject constructor(
             }
         }
     }
-
 }

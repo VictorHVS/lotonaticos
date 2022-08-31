@@ -7,4 +7,7 @@
     <issue id="InvalidPackage" severity="ignore"/>
     <issue id="LabelFor" severity="ignore"/>
     <issue id="Autofill" severity="ignore"/>
+    <issue id="VectorRaster" severity="ignore"/>
+    <issue id="UnusedResources" severity="ignore"/>
+    <issue id="IconDuplicates" severity="ignore"/>
 </lint>

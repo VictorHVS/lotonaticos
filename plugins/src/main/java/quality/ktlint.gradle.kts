@@ -12,14 +12,21 @@ dependencies {
     ktlint(libs.ktlint)
 }
 
+val disabledRules = listOf(
+    "filename"
+)
+
 tasks {
     register<JavaExec>("ktlint") {
+
         description = "Check Kotlin code style."
         classpath = ktlint
         mainClass.set("com.pinterest.ktlint.Main")
         args(
-            "src/**/*.kt", "--reporter=plain", "--reporter=checkstyle," +
-                "output=${buildDir}/reports/ktlint.xml"
+            "src/**/*.kt",
+            "--disabled_rules=${disabledRules.joinToString(",")}",
+            "--reporter=checkstyle,output=$buildDir/reports/ktlint/ktlint-checkstyle.xml",
+            "--reporter=plain"
         )
     }
 
@@ -28,5 +35,11 @@ tasks {
         classpath = ktlint
         mainClass.set("com.pinterest.ktlint.Main")
         args("-F", "src/**/*.kt")
+    }
+}
+
+afterEvaluate {
+    tasks.named("check") {
+        dependsOn(tasks.getByName("ktlint"))
     }
 }

@@ -16,15 +16,12 @@ class LotteryRepository @Inject constructor() {
         FirebaseFirestore.getInstance().collection(FIRESTORE_COLLECTION_LOTTERY)
 
     fun getAllLotteries() = flow<State<List<Lottery>>> {
-
         emit(State.loading())
 
         val snapshot = mLotteryCollection.get().await()
         val lotteries = snapshot.toObjects(Lottery::class.java)
         emit(State.success(lotteries))
-
     }.catch {
         emit(State.failed(it.message.toString()))
     }.flowOn(Dispatchers.IO)
-
 }

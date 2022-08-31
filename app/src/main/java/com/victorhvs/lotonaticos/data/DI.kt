@@ -17,9 +17,10 @@ object DI {
     @Provides
     @Singleton
     fun provideAppCheckFactory(): AppCheckProviderFactory {
-        return if (BuildConfig.DEBUG)
+        return if (BuildConfig.DEBUG) {
             DebugAppCheckProviderFactory.getInstance()
-        else
+        } else {
             PlayIntegrityAppCheckProviderFactory.getInstance()
+        }
     }
 }

@@ -47,23 +47,21 @@ jobs:
         run: |
             touch app/google-services.json
             echo $GOOGLE_SERVICES >> app/google-services.json
-#      - name: Run Lint
-#        run: ./gradlew lint
 
-#      - name: Run Ktlint
-#        run: ./gradlew ktlint
+      - name: Run Lint
+        run: ./gradlew lint
 
-#      - name: Run Detekt
-#        run: ./gradlew detekt
+      - name: Run Ktlint
+        run: ./gradlew ktlint
 
-#      - name: Build with Gradle
-#        run: ./gradlew clean build test --no-daemon --parallel build
+      - name: Run Detekt
+        run: ./gradlew detekt
 
       - name: Run Jacoco Report
-        run: ./gradlew jacocoTestReport --stacktrace
+        run: ./gradlew jacocoTestReport
 
-#      - name: Run Jacoco coverageVerification
-#        run: ./gradlew jacocoCoverageVerification --stacktrace
+      - name: Run Jacoco coverageVerification
+        run: ./gradlew jacocoCoverageVerification
 
       - name: Build and analyze
         env:

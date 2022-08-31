@@ -18,15 +18,12 @@ class ContestResultRepository @Inject constructor() {
         FirebaseFirestore.getInstance().collection(FIRESTORE_COLLECTION_MEGA)
 
     fun getMegaResults() = flow<State<List<ContestResult>>> {
-
         emit(State.loading())
 
         val snapshot = mLotteryCollection.limit(15).orderBy(FIRESTORE_CONTEST_DATEFIELD, Query.Direction.DESCENDING).get().await()
         val lotteries = snapshot.toObjects(ContestResult::class.java)
         emit(State.success(lotteries))
-
     }.catch {
         emit(State.failed(it.message.toString()))
     }.flowOn(Dispatchers.IO)
-
 }

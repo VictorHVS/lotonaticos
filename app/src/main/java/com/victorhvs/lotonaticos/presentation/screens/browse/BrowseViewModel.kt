@@ -30,5 +30,4 @@ class BrowseViewModel @Inject constructor(
             }
         }
     }
-
 }

@@ -1,4 +1,4 @@
-package com.victorhvs.lotonaticos.presentation.screens.result_list
+package com.victorhvs.lotonaticos.presentation.screens.resultList
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -15,7 +15,6 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -32,14 +31,12 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.times
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import com.victorhvs.lotonaticos.R
 import com.victorhvs.lotonaticos.data.fake.Mocks.contestResultMock
 import com.victorhvs.lotonaticos.data.fake.Mocks.lotteryMock
@@ -55,18 +52,16 @@ import kotlin.math.ceil
 
 @Composable
 fun ContestResultListScreen(
-    navController: NavController,
     viewModel: ResultsViewModel = hiltViewModel()
 ) {
     val state = viewModel.contestResults.collectAsState(initial = State.loading()).value
-    BrowseContainer(state, navController)
+    BrowseContainer(state)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BrowseContainer(
-    state: State<List<ContestResult>>,
-    navController: NavController
+    state: State<List<ContestResult>>
 ) {
     Scaffold(
         topBar = {
@@ -120,7 +115,6 @@ fun ContestResultItem(
     contestResult: ContestResult,
     modifier: Modifier = Modifier
 ) {
-
     val configuration = LocalConfiguration.current
 
     val height by remember {
@@ -135,7 +129,6 @@ fun ContestResultItem(
             .fillMaxWidth()
             .wrapContentHeight()
     ) {
-
         Row(
             modifier = modifier
                 .padding(horizontal = 4.dp)
@@ -148,7 +141,7 @@ fun ContestResultItem(
                     .size(24.dp)
                     .align(Alignment.CenterVertically),
                 alignment = Alignment.Center,
-                colorFilter = ColorFilter.tint(Color(0xFF8fcbb3), BlendMode.Modulate),
+                colorFilter = ColorFilter.tint(Color(0xFF8fcbb3), BlendMode.Modulate)
             )
 
             Column(modifier = modifier.padding(4.dp)) {
@@ -227,12 +220,12 @@ fun ResultsScreenPreview() {
         contestResultMock.copy(id = "4"),
         contestResultMock.copy(id = "5"),
         contestResultMock.copy(id = "6"),
-        contestResultMock.copy(id = "7"),
+        contestResultMock.copy(id = "7")
     )
     val state = State.Success(results)
 
     LotonaticosTheme {
-        BrowseContainer(state = state, navController = NavController(LocalContext.current))
+        BrowseContainer(state = state)
     }
 }
 
@@ -248,7 +241,7 @@ fun Toolbar() {
             modifier = Modifier
                 .size(24.dp),
             alignment = Alignment.Center,
-            colorFilter = ColorFilter.tint(Color(0xFF8fcbb3), BlendMode.Modulate),
+            colorFilter = ColorFilter.tint(Color(0xFF8fcbb3), BlendMode.Modulate)
         )
         Text(
             text = stringResource(id = R.string.app_name),
