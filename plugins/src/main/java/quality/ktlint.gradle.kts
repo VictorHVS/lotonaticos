@@ -12,10 +12,6 @@ dependencies {
     ktlint(libs.ktlint)
 }
 
-val disabledRules = listOf(
-    "filename"
-)
-
 tasks {
     register<JavaExec>("ktlint") {
 
@@ -24,9 +20,9 @@ tasks {
         mainClass.set("com.pinterest.ktlint.Main")
         args(
             "src/**/*.kt",
-            "--disabled_rules=${disabledRules.joinToString(",")}",
             "--reporter=checkstyle,output=$buildDir/reports/ktlint/ktlint-checkstyle.xml",
-            "--reporter=plain"
+            "--reporter=plain",
+            "--editorconfig=$rootDir/config/filters/ktlint.editorconfig"
         )
     }
 

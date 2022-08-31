@@ -1,0 +1,4 @@
+root = true
+
+[*.{kt, kts, java}]
+ktlint_disabled_rules = filename, annotation
