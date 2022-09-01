@@ -30,6 +30,7 @@ val coverageExclusions = listOf(
     // Ui
     "**/ui/**/components/**",
     "**/ui/**/view/**",
+    "**/ui/**/view/**",
     "**/ui/**/screens/**",
     "**/ui/**/theme/**",
 )
