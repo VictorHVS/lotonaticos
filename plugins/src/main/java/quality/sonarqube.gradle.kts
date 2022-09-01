@@ -46,14 +46,12 @@ configure<SonarQubeExtension> {
         property("sonar.coverage.exclusions", coverageExclusions.joinToString(separator = ","))
         property("sonar.exclusions", codeExclusions.joinToString(separator = ","))
         property("sonar.java.coveragePlugin", "jacoco")
-//        property(
-//            "sonar.kotlin.detekt.reportPaths",
-//            "${rootProject.buildDir}/reports/detekt/detekt.xml"
-//        )
         property("sonar.junit.reportPaths", "$buildDir/test-results/**/*.xml")
         property("sonar.jacoco.reportPaths", "$buildDir/reports/jacoco/**/*.xml")
+        property("sonar.coverage.jacoco.xmlReportPaths", "$buildDir/reports/jacoco/**/*.xml")
         property("sonar.kotlin.detekt.reportPaths", "$buildDir/reports/detekt/detekt.xml")
         property("sonar.androidLint.reportPaths", "$buildDir/reports/lint-results-debug.xml")
+        property("sonar.kotlin.ktlint.reportPaths", "$buildDir/reports/ktlint/ktlint-checkstyle.xml")
 
         property("sonar.language", "kotlin")
 //        property("sonar.log.level", "TRACE")
