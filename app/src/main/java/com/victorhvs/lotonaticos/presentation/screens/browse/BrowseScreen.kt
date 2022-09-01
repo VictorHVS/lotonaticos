@@ -2,7 +2,12 @@ package com.victorhvs.lotonaticos.presentation.screens.browse
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.*
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -17,7 +22,6 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import com.victorhvs.lotonaticos.domain.State
 import com.victorhvs.lotonaticos.domain.models.Lottery
 import com.victorhvs.lotonaticos.presentation.navigation.HomeSections
-import com.victorhvs.lotonaticos.R
 
 @Composable
 fun BrowseScreen(
@@ -26,7 +30,6 @@ fun BrowseScreen(
 ) {
     val state = browseViewModel.selectedBrewery.collectAsState(initial = State.loading()).value
     BrowseContainer(state, navController)
-
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

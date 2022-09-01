@@ -7,6 +7,8 @@ plugins {
     id("kotlinx-serialization")
     id("org.jetbrains.kotlin.android")
     id("com.google.firebase.crashlytics")
+    id("org.sonarqube") version "3.4.0.2513"
+    id("com.victorhvs.kotlin-quality")
 }
 
 android {
@@ -27,14 +29,28 @@ android {
     }
 
     buildTypes {
+        debug {
+            isTestCoverageEnabled = true
+        }
         release {
             isMinifyEnabled = true
             isShrinkResources = true
+            isTestCoverageEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android.txt"),
                 "proguard-rules.pro"
             )
         }
+    }
+
+    lint {
+        warningsAsErrors = true
+        abortOnError = true
+        htmlReport = true
+        checkDependencies = true
+
+        lintConfig = file("${rootDir}/config/filters/lint.xml")
+        htmlOutput = file("${buildDir}/reports/lint.html")
     }
 
     compileOptions {
@@ -54,6 +70,13 @@ android {
 
     packagingOptions {
         resources.excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+    }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+            unitTests.isReturnDefaultValues = true
+        }
     }
 }
 

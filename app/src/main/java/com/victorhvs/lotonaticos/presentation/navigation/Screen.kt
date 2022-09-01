@@ -32,5 +32,5 @@ enum class HomeSections(
 ) {
     RESULT(R.string.home_results, Icons.Filled.Home, "home/results"),
     STATS(R.string.home_analytics, Icons.Filled.StackedLineChart, "home/analytics"),
-    SETTING(R.string.home_settings, Icons.Filled.Settings, "home/settings"),
+    SETTING(R.string.home_settings, Icons.Filled.Settings, "home/settings")
 }
