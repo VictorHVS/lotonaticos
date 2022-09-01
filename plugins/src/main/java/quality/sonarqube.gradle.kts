@@ -50,20 +50,20 @@ configure<SonarQubeExtension> {
 //            "sonar.kotlin.detekt.reportPaths",
 //            "${rootProject.buildDir}/reports/detekt/detekt.xml"
 //        )
-        property("sonar.junit.reportPaths", "build/test-results/**/*.xml")
-        property("sonar.jacoco.reportPaths", "build/reports/jacoco/**/*.xml")
-        property("sonar.kotlin.detekt.reportPaths", "build/reports/detekt/detekt.xml")
-        property("sonar.androidLint.reportPaths", "build/reports/lint-results-debug.xml")
+        property("sonar.junit.reportPaths", "$buildDir/test-results/**/*.xml")
+        property("sonar.jacoco.reportPaths", "$buildDir/reports/jacoco/**/*.xml")
+        property("sonar.kotlin.detekt.reportPaths", "$buildDir/reports/detekt/detekt.xml")
+        property("sonar.androidLint.reportPaths", "$buildDir/reports/lint-results-debug.xml")
 
         property("sonar.language", "kotlin")
-        property("sonar.log.level", "TRACE")
-        property("sonar.qualitygate.wait", true)
+//        property("sonar.log.level", "TRACE")
+//        property("sonar.qualitygate.wait", true)
         property("sonar.sourceEncoding", "UTF-8")
         property("sonar.tags", "android")
         property("sonar.verbose", true)
     }
 
-    subprojects {
-        androidVariant = "debug"
-    }
+//    subprojects {
+//        androidVariant = "debug"
+//    }
 }
