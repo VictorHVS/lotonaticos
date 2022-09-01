@@ -30,6 +30,8 @@ val coverageExclusions = listOf(
     // Ui
     "**/ui/**/components/**",
     "**/ui/**/view/**",
+    "**/ui/**/screens/**",
+    "**/ui/**/theme/**",
 )
 
 configure<SonarQubeExtension> {
