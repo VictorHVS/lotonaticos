@@ -1,4 +1,4 @@
-name: build
+name: Lotonáticos
 
 on:
   push:
@@ -12,6 +12,15 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  cancel-stale-jobs:
+    name: Cancel stale jobs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Stale Jobs
+        uses: styfle/cancel-workflow-action@0.10.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   build:
     runs-on: ubuntu-latest
 
@@ -45,11 +54,8 @@ jobs:
         env:
           GOOGLE_SERVICES: ${{ secrets.GOOGLE_SERVICES }}
         run: |
-            touch app/google-services.json
-            echo $GOOGLE_SERVICES >> app/google-services.json
-
-      - name: Run Lint
-        run: ./gradlew lint
+          touch app/google-services.json
+          echo $GOOGLE_SERVICES >> app/google-services.json
 
       - name: Run Ktlint
         run: ./gradlew ktlint
@@ -63,8 +69,11 @@ jobs:
       - name: Run Jacoco coverageVerification
         run: ./gradlew jacocoCoverageVerification
 
-      - name: Build and analyze
+      - name: Run Lint
+        run: ./gradlew lint
+
+      - name: SonarQube
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew build sonarqube --info
+        run: ./gradlew sonarqube --no-daemon

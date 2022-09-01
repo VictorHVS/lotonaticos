@@ -1,3 +1,5 @@
+rootProject.name = "Lotonaticos"
+
 include(":app")
 
 pluginManagement {

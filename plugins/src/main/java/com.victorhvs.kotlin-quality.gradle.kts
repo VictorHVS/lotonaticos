@@ -2,6 +2,7 @@ plugins {
     id("quality.detekt")
     id("quality.ktlint")
     id("quality.jacoco")
+    id("quality.sonarqube")
 }
 
 tasks.getByName("check") {

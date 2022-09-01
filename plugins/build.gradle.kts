@@ -10,4 +10,5 @@ repositories {
 
 dependencies {
     implementation(libs.detekt)
+    implementation(libs.sonarqube)
 }

@@ -30,7 +30,11 @@ tasks {
         description = "Fix Kotlin code style deviations."
         classpath = ktlint
         mainClass.set("com.pinterest.ktlint.Main")
-        args("-F", "src/**/*.kt")
+        args(
+            "-F",
+            "src/**/*.kt",
+            "--editorconfig=$rootDir/config/filters/ktlint.editorconfig"
+        )
     }
 }
 
