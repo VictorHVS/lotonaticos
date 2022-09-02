@@ -5,6 +5,9 @@
   "baseBranches": ["main"],
   "rebaseWhen": "behind-base-branch",
   "reviewers": ["VictorHVS"],
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "groupName": "compose",
