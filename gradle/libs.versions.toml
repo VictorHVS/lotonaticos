@@ -58,8 +58,6 @@ kotlinKapt                          = { id = "org.jetbrains.kotlin.kapt", versio
 kotlinParcelize                     = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 kotlinSerialization                 = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp                                 = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-#ktLint                              = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktLint" }
-
 
 [libraries]
 gp-firebaseCrashlytics = { module = "com.google.firebase:firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsPlugin" }
