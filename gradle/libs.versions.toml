@@ -10,7 +10,7 @@ firebaseCrashlyticsPlugin           = "2.8.1"
 googleServices                      = "4.3.13"
 
 # production libraries
-coreKtx                             = "1.7.0"
+coreKtx                             = "1.8.0"
 appCompat                           = "1.5.0"
 lifecycleRuntime                    = "2.4.1"
 coil                                = "2.2.0"
