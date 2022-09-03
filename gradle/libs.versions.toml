@@ -6,7 +6,7 @@ sonarqube                           = "3.2.0"
 ktlint                              = "0.47.0"
 junit                               = "4.13.2"
 ksp                                 = "1.7.10-1.0.6"
-firebaseCrashlyticsPlugin           = "2.8.1"
+firebaseCrashlyticsPlugin           = "2.9.1"
 googleServices                      = "4.3.13"
 
 # production libraries
@@ -21,19 +21,19 @@ composeNavigation                   = "2.5.1"
 composeNavigationHilt               = "1.0.0"
 composeActivity                     = "1.5.1"
 composeAppCompatTheme               = "0.25.1"
-composePaging                       = "1.0.0-alpha14"
+composePaging                       = "1.0.0-alpha16"
 composeSwipeRefresh                 = "0.24.0-alpha"
-composeMaterial3                    = "1.0.0-alpha15"
+composeMaterial3                    = "1.0.0-beta01"
 desugar                             = "1.1.6"
 hilt                                = "2.43.2"
 kotlin                              = "1.7.10"
 kotlinCoroutines                    = "1.6.4"
-kotlinSerialization                 = "1.3.3"
+kotlinSerialization                 = "1.4.0"
 kotlinSerializationConverter        = "0.8.0"
 kotlinCoroutinePlayServices         = "1.6.4"
 lifecycle                           = "2.5.1"
 
-firebaseBoM                         = "30.2.0"
+firebaseBoM                         = "30.4.0"
 appCheckDebug                       = "16.0.1"
 
 # test libraries
@@ -58,7 +58,6 @@ kotlinKapt                          = { id = "org.jetbrains.kotlin.kapt", versio
 kotlinParcelize                     = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 kotlinSerialization                 = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp                                 = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-#ktLint                              = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktLint" }
 
 
 [libraries]
