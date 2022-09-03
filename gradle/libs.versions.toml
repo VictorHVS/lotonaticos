@@ -6,7 +6,7 @@ sonarqube                           = "3.2.0"
 ktlint                              = "0.47.0"
 junit                               = "4.13.2"
 ksp                                 = "1.7.10-1.0.6"
-firebaseCrashlyticsPlugin           = "2.8.1"
+firebaseCrashlyticsPlugin           = "2.9.1"
 googleServices                      = "4.3.13"
 
 # production libraries
