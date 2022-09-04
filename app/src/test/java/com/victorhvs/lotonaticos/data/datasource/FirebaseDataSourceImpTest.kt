@@ -1,10 +1,8 @@
 package com.victorhvs.lotonaticos.data.datasource
 
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
 import com.victorhvs.lotonaticos.CoroutinesRule
-import com.victorhvs.lotonaticos.domain.Constants
 import com.victorhvs.lotonaticos.domain.models.ContestResult
 import io.mockk.coEvery
 import io.mockk.every
@@ -59,5 +57,4 @@ class FirebaseDataSourceImpTest {
 
         every { querySnap.toObjects(ContestResult::class.java) } returns listOf(result)
     }
-
 }
