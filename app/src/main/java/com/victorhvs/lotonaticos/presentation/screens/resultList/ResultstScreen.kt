@@ -1,16 +1,19 @@
 package com.victorhvs.lotonaticos.presentation.screens.resultList
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
@@ -42,6 +45,7 @@ fun BrowseContainer(
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
+                modifier = Modifier.background(Color.Black),
                 title = {
                     val globalText = stringResource(id = R.string.app_name)
                     val spanStyles = listOf(
@@ -51,7 +55,7 @@ fun BrowseContainer(
                             end = 4
                         )
                     )
-                    Text(text = AnnotatedString(globalText, spanStyles))
+                    Text(text = AnnotatedString(globalText, spanStyles), style = MaterialTheme.typography.titleLarge)
                 }
             )
         },
@@ -86,8 +90,8 @@ fun ContestResultList(
     modifier: Modifier = Modifier
 ) {
     LazyColumn(
-        modifier = modifier.padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(10.dp)
+        modifier = modifier.padding(horizontal = 16.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(items = results, key = { it.hashCode() }) { result ->
             CardItem(contestResult = result, lottery = lotteryMock)

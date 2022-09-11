@@ -1,6 +1,6 @@
 package com.victorhvs.lotonaticos
 
-import com.victorhvs.lotonaticos.commons.DispatcherProvider
+import com.victorhvs.lotonaticos.core.DispatcherProvider
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.test.TestDispatcher

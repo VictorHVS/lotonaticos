@@ -1,6 +1,6 @@
 package com.victorhvs.lotonaticos.data.repository
 
-import com.victorhvs.lotonaticos.commons.DispatcherProvider
+import com.victorhvs.lotonaticos.core.DispatcherProvider
 import com.victorhvs.lotonaticos.data.datasource.FirebaseDataSource
 import com.victorhvs.lotonaticos.domain.State
 import kotlinx.coroutines.flow.catch

@@ -2,7 +2,7 @@ package com.victorhvs.lotonaticos.data.datasource
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import com.victorhvs.lotonaticos.commons.DispatcherProvider
+import com.victorhvs.lotonaticos.core.DispatcherProvider
 import com.victorhvs.lotonaticos.domain.Constants
 import com.victorhvs.lotonaticos.domain.models.ContestResult
 import kotlinx.coroutines.tasks.await

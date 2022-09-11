@@ -49,10 +49,11 @@ class FirebaseDataSourceImpTest {
 
         val querySnap = mockk<QuerySnapshot>()
         coEvery {
-            client.collection(any())
+            val query = client.collection(any())
                 .limit(any())
                 .orderBy(any<String>(), any())
-                .get().await()
+                .get()
+            query.await()
         } returns querySnap
 
         every { querySnap.toObjects(ContestResult::class.java) } returns listOf(result)

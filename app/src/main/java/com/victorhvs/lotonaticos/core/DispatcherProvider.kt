@@ -1,4 +1,4 @@
-package com.victorhvs.lotonaticos.commons
+package com.victorhvs.lotonaticos.core
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

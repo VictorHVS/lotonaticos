@@ -6,7 +6,7 @@
     <string name="home_settings">Sobre</string>
     <string name="result_description">%s • %s</string>
     <string name="jackpot">Acumulou!</string>
-    <string name="loading">Carregando...</string>
+    <string name="loading">Carregando…</string>
     <plurals name="winners_count">
         <item quantity="zero">@string/jackpot</item>
         <item quantity="one">%d ganhador</item>

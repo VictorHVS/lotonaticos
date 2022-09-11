@@ -33,7 +33,7 @@ internal class ResultsViewModelTest {
             } returns flowOf(success)
             // WHEN
             // THEN
-            viewModel = ResultsViewModel(repository, coroutineRule.dispatcherProvider)
+            viewModel = ResultsViewModel(repository)
             viewModel.contestResults.value shouldBe success
         }
 
@@ -48,7 +48,7 @@ internal class ResultsViewModelTest {
             } returns flowOf(error)
             // WHEN
             // THEN
-            viewModel = ResultsViewModel(repository, coroutineRule.dispatcherProvider)
+            viewModel = ResultsViewModel(repository)
             viewModel.contestResults.value shouldBe error
         }
 }
