@@ -1,8 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Lotonáticos</string>
     <string name="home_results">Resultados</string>
     <string name="home_analytics">Análise</string>
     <string name="home_settings">Sobre</string>
-    <string name="result_description">%s • R$%s</string>
-    <string name="result_title">%s n°%s</string>
+    <string name="result_description">%s • %s</string>
+    <string name="jackpot">Acumulou!</string>
+    <string name="loading">Carregando…</string>
+    <plurals name="winners_count">
+        <item quantity="zero">@string/jackpot</item>
+        <item quantity="one">%d ganhador</item>
+        <item quantity="other">%d ganhadores</item>
+    </plurals>
 </resources>

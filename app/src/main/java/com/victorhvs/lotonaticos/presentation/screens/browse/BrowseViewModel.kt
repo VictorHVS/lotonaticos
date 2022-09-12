@@ -2,7 +2,7 @@ package com.victorhvs.lotonaticos.presentation.screens.browse
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.victorhvs.lotonaticos.data.LotteryRepository
+import com.victorhvs.lotonaticos.data.repository.LotteryRepository
 import com.victorhvs.lotonaticos.domain.State
 import com.victorhvs.lotonaticos.domain.models.Lottery
 import dagger.hilt.android.lifecycle.HiltViewModel

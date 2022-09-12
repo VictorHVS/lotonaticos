@@ -10,11 +10,6 @@ import com.victorhvs.lotonaticos.R
 
 sealed class Screen(val route: String) {
 
-    companion object {
-        const val DRAW_ARGUMENT_KEY = "drawId"
-    }
-
-    object Splash : Screen("splash_screen")
     object Browse : Screen("home/results")
     object Setting : Screen("home/settings")
     object Statistic : Screen("home/analytics")

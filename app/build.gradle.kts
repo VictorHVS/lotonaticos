@@ -66,6 +66,13 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
+
+        freeCompilerArgs = freeCompilerArgs + listOf(
+            "-opt-in=kotlin.RequiresOptIn",
+            "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi",
+            "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+            "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+        )
     }
 
     packagingOptions {
@@ -95,7 +102,8 @@ dependencies {
     implementation(libs.compose.icons)
     implementation(libs.compose.navigation)
     implementation(libs.compose.navigationHilt)
-    implementation(libs.compose.accompanist.swipeRefresh)
+    implementation(libs.accompanist.swipeRefresh)
+    implementation(libs.accompanist.systemuicontroller)
     debugImplementation(libs.compose.tooling)
 
     implementation(libs.hilt)

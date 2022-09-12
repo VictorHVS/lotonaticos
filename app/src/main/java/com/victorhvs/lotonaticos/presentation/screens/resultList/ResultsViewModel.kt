@@ -2,7 +2,7 @@ package com.victorhvs.lotonaticos.presentation.screens.resultList
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.victorhvs.lotonaticos.data.ContestResultRepository
+import com.victorhvs.lotonaticos.data.repository.ContestResultRepository
 import com.victorhvs.lotonaticos.domain.State
 import com.victorhvs.lotonaticos.domain.models.ContestResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -24,11 +24,13 @@ class ResultsViewModel @Inject constructor(
         getAllPosts()
     }
 
-    private fun getAllPosts() {
-        viewModelScope.launch {
+    private fun getAllPosts() = viewModelScope.launch {
+        try {
             repository.getMegaResults().collect {
                 _contestResults.value = it
             }
+        } catch (exception: Exception) {
+            _contestResults.value = State.failed("${exception.message}")
         }
     }
 }
