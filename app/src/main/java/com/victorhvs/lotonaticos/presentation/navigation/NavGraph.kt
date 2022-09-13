@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.victorhvs.lotonaticos.presentation.screens.browse.BrowseScreen
 import com.victorhvs.lotonaticos.presentation.screens.resultList.ContestResultListScreen
 
 @Composable
@@ -13,7 +14,8 @@ fun SetupNavGraph(navController: NavHostController) {
         startDestination = Screen.Browse.route
     ) {
         composable(route = Screen.Browse.route) {
-            ContestResultListScreen()
+            BrowseScreen(navController)
+//            ContestResultListScreen()
         }
     }
 }
