@@ -43,6 +43,6 @@ fun DrawerTopBar(
                     },
                 contentDescription = null
             )
-        },
+        }
     )
 }

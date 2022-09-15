@@ -147,9 +147,11 @@ fun DrawerSheetComponent(
 }
 
 fun openUrl(url: String, context: Context) {
-    context.startActivity(Intent(Intent.ACTION_VIEW).apply {
-        data = Uri.parse(url)
-    })
+    context.startActivity(
+        Intent(Intent.ACTION_VIEW).apply {
+            data = Uri.parse(url)
+        }
+    )
 }
 
 enum class DrawerHeaderEnum(
@@ -171,7 +173,7 @@ enum class DrawerHeaderEnum(
         icon = Icons.Outlined.HelpOutline,
         label = R.string.drawer_header_need_help,
         url = R.string.drawer_header_need_help_url
-    ),
+    )
 }
 
 enum class DrawerFooterEnum(
