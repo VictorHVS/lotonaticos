@@ -155,7 +155,7 @@ fun openUrl(url: String, context: Context) {
 }
 
 enum class DrawerHeaderEnum(
-    @IconType val icon: ImageVector,
+    val icon: ImageVector,
     @StringRes val label: Int,
     @StringRes val url: Int
 ) {
