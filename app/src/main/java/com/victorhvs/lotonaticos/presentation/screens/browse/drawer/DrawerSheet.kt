@@ -34,7 +34,6 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.core.graphics.drawable.IconCompat.IconType
 import com.victorhvs.lotonaticos.BuildConfig
 import com.victorhvs.lotonaticos.R
 import kotlinx.coroutines.launch
