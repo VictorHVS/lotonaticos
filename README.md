@@ -7,7 +7,7 @@
 Neste aplicativo o usuário será capaz de acompanhar e receber alertas dos jogos da lotérica da caixa tanto em seu celular, quanto relógio e whatsapp/telegram.
 
 ## Funcionalidades
-É possível acompanhar detalhes do [Roadmap aqui.](https://github.com/users/VictorHVS/projects/6/views/1). Hoje o usuário pode ver os últimos 15 jogos da mega-sena, mas em breve será implementado: Detalhes do Jogo, push notification, widget e outros jogos das lotéricas.
+É possível acompanhar detalhes do [Roadmap aqui](https://github.com/users/VictorHVS/projects/6/views/1) e detalhes dos [protótipos de tela aqui](https://www.figma.com/file/v8s5cnu3xwwpLfawnVW8yT/Loton%C3%A1ticos?node-id=51495%3A4712) .Hoje o usuário pode ver os últimos 15 jogos da mega-sena, mas em breve será implementado: Detalhes do Jogo, push notification, widget e outros jogos das lotéricas.
 
 ## 🛠️ Tech Stack
 
