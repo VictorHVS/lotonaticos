@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Lotonáticos</string>
+
+    <!-- Bottom Bar -->
     <string name="home_results">Resultados</string>
     <string name="home_analytics">Análise</string>
     <string name="home_settings">Sobre</string>
+    <!-- Bottom Bar -->
+
+    <!-- Card -->
     <string name="result_description">%s • %s</string>
     <string name="jackpot">Acumulou!</string>
-    <string name="loading">Carregando…</string>
     <plurals name="winners_count">
         <item quantity="zero">@string/jackpot</item>
         <item quantity="one">%d ganhador</item>
         <item quantity="other">%d ganhadores</item>
     </plurals>
+    <!-- Card -->
+
+    <!-- Drawer -->
+    <string name="drawer_footer_suggestions">Nos envie sugestões</string>
+    <string name="drawer_footer_suggestions_url">mailto:vhv.sousa@gmail.com</string>
+    <string name="drawer_footer_privacy_policy">Política de privacidade</string>
+    <string name="drawer_footer_privacy_policy_url">https://victorhvs.notion.site/victorhvs/Pol-tica-de-Privacidade-do-Lotoman-acos-531b26998fde404a8ba36bf410cc723c</string>
+    <string name="drawer_footer_terms_of_service">Termos de serviço</string>
+    <string name="drawer_footer_terms_of_service_url">https://victorhvs.notion.site/victorhvs/Pol-tica-de-Privacidade-do-Lotoman-acos-531b26998fde404a8ba36bf410cc723c</string>
+    <string name="drawer_header_roadmap">Acompanhe de perto</string>
+    <string name="drawer_header_roadmap_url">https://github.com/VictorHVS/lotonaticos</string>
+    <string name="drawer_header_need_help">Precisa de ajuda?</string>
+    <string name="drawer_header_need_help_url">mailto:vhv.sousa@gmail.com</string>
+    <string name="drawer_header_rate_us">Nos avalie na loja</string>
+    <string name="drawer_header_rate_us_url">https://play.google.com/store/apps/details?id=com.victorhvs.lotonaticos</string>
+    <!-- Drawer -->
+
+    <!-- Commons -->
+    <string name="loading">Carregando…</string>
+    <!-- Commons -->
+
 </resources>

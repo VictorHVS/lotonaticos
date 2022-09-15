@@ -4,24 +4,10 @@
 ==================
 **Lotonáticos**  é um aplicativo android nativo inteiramente desenvolvido em Kotlin e Jetpack Compose. Seguindo boas práticas de design e desenvolvimento com o principal objetivo servir de exemplo para jovens desenvolvedores.
 
+Neste aplicativo o usuário será capaz de acompanhar e receber alertas dos jogos da lotérica da caixa tanto em seu celular, quanto relógio e whatsapp/telegram.
 
-## 📱 Funcionalidades
-O **Lotonáticos** permite o usuário visualizar os resultados dos jogos e receber notificações via push-notifications(TBD) ou via whatsapp(TBD).
-
-
-## ✅ TODO
-- [x] Listar resultados da mega sena
-- [x] Crawler para capturar resultados
-- [ ] Github Actions for CI/CD
-- [ ] Tela de detalhes de um jogo
-- [ ] Tela de apoio
-- [ ] Tela de análise de jogos
-- [ ] Push-notifications com os resultados
-- [ ] Alerta via whatsapp
-- [ ] In-app update
-- [ ] Geração de jogos
-- [ ] Adsense
-- [ ] Plano Premium
+## Funcionalidades
+É possível acompanhar detalhes do [Roadmap aqui](https://github.com/users/VictorHVS/projects/6/views/1) e detalhes dos [protótipos de tela aqui](https://www.figma.com/file/v8s5cnu3xwwpLfawnVW8yT/Loton%C3%A1ticos?node-id=51495%3A4712) .Hoje o usuário pode ver os últimos 15 jogos da mega-sena, mas em breve será implementado: Detalhes do Jogo, push notification, widget e outros jogos das lotéricas.
 
 ## 🛠️ Tech Stack
 
@@ -31,8 +17,9 @@ O **Lotonáticos** permite o usuário visualizar os resultados dos jogos e receb
   - Firestore
   - Cloud Functions
   - App Check
-- Jetpack Compose
-- Material Design 3
+- [Jetpack Compose](https://developer.android.com/jetpack/compose) - O Jetpack Compose é um kit de ferramentas moderno do Android para criar IUs nativas. Ele simplifica e acelera o desenvolvimento da IU no Android. Dê vida ao seu app rapidamente com menos código, ferramentas eficientes e APIs Kotlin intuitivas.
+- [Material Design 3](https://m3.material.io/) - A última versão do Material Design.
+- [Figma](https://www.figma.com/file/v8s5cnu3xwwpLfawnVW8yT/Loton%C3%A1ticos?node-id=51495%3A4712) - É um editor gráfico de vetor e prototipagem de projetos de design.
 
 
 ## 📃 Artigos
@@ -47,6 +34,6 @@ Se você quiser contribuir ou apoiar o desenvolvimento deste projeto de forma ma
 3. Escreva sobre no [Medium](https://medium.com/), [Dev.to](https://dev.to/) ou blog pessoal.
 4. Patrocine o **🍀 Lotonáticos** doando um [**cafezinho ☕**](https://buymeacoff.ee/victorhvs)
 
-## 🧔 Autor
+## 🧑‍💻 Entre em contato
 
 - Victor Hugo - [@victorhvs_](https://twitter.com/victorhvs_)
