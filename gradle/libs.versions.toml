@@ -33,7 +33,7 @@ kotlinCoroutinePlayServices         = "1.6.4"
 lifecycle                           = "2.5.1"
 
 firebaseBoM                         = "30.4.1"
-appCheckDebug                       = "16.0.1"
+appCheckDebug                       = "16.0.2"
 
 # test libraries
 testJunit                           = "5.9.0"
