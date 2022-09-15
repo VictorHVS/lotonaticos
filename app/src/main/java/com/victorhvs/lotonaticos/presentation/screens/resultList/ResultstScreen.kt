@@ -6,18 +6,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.AnnotatedString
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -32,32 +27,36 @@ import com.victorhvs.lotonaticos.presentation.theme.LotonaticosTheme
 
 @Composable
 fun ContestResultListScreen(
+    topBar: @Composable () -> Unit = {},
     viewModel: ResultsViewModel = hiltViewModel()
 ) {
     val state = viewModel.contestResults.collectAsState(initial = State.loading()).value
-    BrowseContainer(state)
+    BrowseContainer(topBar, state)
 }
 
 @Composable
 fun BrowseContainer(
+    topBar: @Composable () -> Unit = {},
     state: State<List<ContestResult>>
 ) {
     Scaffold(
+        modifier = Modifier.background(MaterialTheme.colorScheme.inversePrimary),
         topBar = {
-            CenterAlignedTopAppBar(
-                modifier = Modifier.background(Color.Black),
-                title = {
-                    val globalText = stringResource(id = R.string.app_name)
-                    val spanStyles = listOf(
-                        AnnotatedString.Range(
-                            SpanStyle(fontWeight = FontWeight.Bold),
-                            start = 0,
-                            end = 4
-                        )
-                    )
-                    Text(text = AnnotatedString(globalText, spanStyles), style = MaterialTheme.typography.titleLarge)
-                }
-            )
+            topBar()
+//            CenterAlignedTopAppBar(
+//                modifier = Modifier.background(Color.Black),
+//                title = {
+//                    val globalText = stringResource(id = R.string.app_name)
+//                    val spanStyles = listOf(
+//                        AnnotatedString.Range(
+//                            SpanStyle(fontWeight = FontWeight.Bold),
+//                            start = 0,
+//                            end = 4
+//                        )
+//                    )
+//                    Text(text = AnnotatedString(globalText, spanStyles), style = MaterialTheme.typography.titleLarge)
+//                }
+//            )
         },
         content = {
             when (state) {
@@ -114,6 +113,6 @@ fun ResultsScreenPreview() {
     val state = State.Success(results)
 
     LotonaticosTheme {
-        BrowseContainer(state = state)
+        BrowseContainer(state = state, )
     }
 }

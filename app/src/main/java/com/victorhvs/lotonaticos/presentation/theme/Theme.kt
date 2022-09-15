@@ -71,21 +71,18 @@ private val DarkColors = darkColorScheme(
 @Composable
 fun LotonaticosTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-//        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-//            val context = LocalContext.current
-//            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-//        }
-        darkTheme -> DarkColors
-        else -> LightColors
-    }
+    val colorScheme = LightColors
+//    val colorScheme = if (darkTheme) {
+//        DarkColors
+//    } else {
+//        LightColors
+//    }
 
     val systemUiController = rememberSystemUiController()
     SideEffect {
-        systemUiController.setStatusBarColor(color = colorScheme.surface, darkIcons = !darkTheme)
+        systemUiController.setStatusBarColor(color = colorScheme.surface, darkIcons = true)
     }
 
     MaterialTheme(
