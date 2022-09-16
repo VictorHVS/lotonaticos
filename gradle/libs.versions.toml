@@ -32,7 +32,7 @@ kotlinSerializationConverter        = "0.8.0"
 kotlinCoroutinePlayServices         = "1.6.4"
 lifecycle                           = "2.5.1"
 
-firebaseBoM                         = "30.4.1"
+firebaseBoM                         = "30.5.0"
 appCheckDebug                       = "16.0.2"
 
 # test libraries
