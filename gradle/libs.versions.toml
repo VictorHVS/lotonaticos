@@ -37,7 +37,7 @@ appCheckDebug                       = "16.0.2"
 
 # test libraries
 testJunit                           = "5.9.0"
-testMockk                           = "1.12.8"
+testMockk                           = "1.13.1"
 testTurbine                         = "0.9.0"
 testKotest                         = "5.4.2"
 
