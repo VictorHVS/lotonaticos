@@ -43,7 +43,7 @@ testKotest                         = "5.5.4"
 
 # android test libraries
 testAndroidJunitExt                 = "1.1.4" # to prevent manifest crashes in UI tests for Android 12 (1.1.3 or higher needed)
-testAndroidRunner                   = "1.4.0"
+testAndroidRunner                   = "1.5.0"
 
 
 [plugins]
