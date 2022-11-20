@@ -1,7 +1,7 @@
 [versions]
 # plugins
 androidGradle                       = "7.3.1"
-detekt                              = "1.21.0"
+detekt                              = "1.22.0"
 sonarqube                           = "3.2.0"
 ktlint                              = "0.47.1"
 junit                               = "4.13.2"
