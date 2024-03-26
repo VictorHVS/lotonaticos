@@ -1,4 +1,4 @@
-mock==4.0.3
-pytest==7.2.0
+mock==5.1.0
+pytest==8.1.1
 jupyter==1.0.0
-google-api-python-client==2.66.0
+google-api-python-client==2.123.0
